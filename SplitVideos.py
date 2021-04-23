@@ -47,7 +47,8 @@ def Video(openpath, savepath = None):
         ret, frame = cap.read()
         if ret:
             # Our operations on the frame come here
-            cv2.imwrite("{}_{}.png".format(savepath, str(frame_number)), frame)
+            num = "%03d"%frame_number
+            cv2.imwrite("{}_{}.png".format(savepath, num), frame)
             # Display the resulting frame
             cv2.imshow("Input", frame)
             frame_number += 1
